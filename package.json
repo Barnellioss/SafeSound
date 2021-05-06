@@ -2,7 +2,7 @@
   "name": "safesound",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Barnellioss/SafeSound",
+  "homepage": "https://barnellioss.github.io/SafeSound",
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@testing-library/jest-dom": "^5.11.6",
