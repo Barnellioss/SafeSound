@@ -1,0 +1,30 @@
+.header__title{
+    font-size: 64px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;   
+}
+
+
+.header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.header__items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 350px;
+}
+
+.header__item{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
