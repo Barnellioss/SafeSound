@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SafeSound/static/css/main.d7a899fb.chunk.css",
+    "main.js": "/SafeSound/static/js/main.ad485f88.chunk.js",
+    "main.js.map": "/SafeSound/static/js/main.ad485f88.chunk.js.map",
+    "runtime-main.js": "/SafeSound/static/js/runtime-main.c9a5c138.js",
+    "runtime-main.js.map": "/SafeSound/static/js/runtime-main.c9a5c138.js.map",
+    "static/js/2.c45e1e03.chunk.js": "/SafeSound/static/js/2.c45e1e03.chunk.js",
+    "static/js/2.c45e1e03.chunk.js.map": "/SafeSound/static/js/2.c45e1e03.chunk.js.map",
+    "static/js/3.b0c31978.chunk.js": "/SafeSound/static/js/3.b0c31978.chunk.js",
+    "static/js/3.b0c31978.chunk.js.map": "/SafeSound/static/js/3.b0c31978.chunk.js.map",
+    "index.html": "/SafeSound/index.html",
+    "static/css/main.d7a899fb.chunk.css.map": "/SafeSound/static/css/main.d7a899fb.chunk.css.map",
+    "static/js/2.c45e1e03.chunk.js.LICENSE.txt": "/SafeSound/static/js/2.c45e1e03.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9a5c138.js",
+    "static/js/2.c45e1e03.chunk.js",
+    "static/css/main.d7a899fb.chunk.css",
+    "static/js/main.ad485f88.chunk.js"
+  ]
+}
