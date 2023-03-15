@@ -8,9 +8,13 @@ import SearchPageContainer from './components/SearchPage/SearchPageContainer';
 import FavoritePage from './components/Favorite/FavoritePage';
 import History from './components/History/History';
 import Track from './components/AboutTrack/Track';
+import Country from './components/Coutry/country';
+import UsersPageUnAuthentified from './components/UsersPage/UsersPage_Unauthenthified';
+import UsersPage from './components/UsersPage/UsersPage';
 
 
 class App extends Component {
+  
   render() {
     return (
       <div className="app-wrapper">
@@ -22,6 +26,9 @@ class App extends Component {
           <Route path="/FavoritePage" render={() => <FavoritePage />} />
           <Route path="/History" render={() => <History/>}></Route>
           <Route path="/Track" render={() => <Track />}></Route>
+          <Route path="/Country" render={() => <Country />}></Route>
+          <Route path="/UserUnAuthentified" render={() => <UsersPageUnAuthentified />}></Route>
+          <Route path="/User" render={() => <UsersPage/>}></Route>
         </div>
       </div>
     )

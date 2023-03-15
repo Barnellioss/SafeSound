@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    width: 350px;
+    width: 450px;
 }
 
 .header__item{
@@ -27,4 +27,21 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
+}
+
+.header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.header__image{
+    display: flex;
+    border-radius: 20px;
+}
+
+.header__image img{
+    border-radius: 50%;
+    cursor: pointer;
 }

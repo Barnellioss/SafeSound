@@ -8,7 +8,8 @@ import SearchPages from './SearchPages';
 
 let mapStateToProps = (state) => {
     return {
-        tracks: state.songsList.tracks
+        tracks: state.songsList.tracks,
+        country: false
     }
 }
 

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { requestSong } from '../../redux/songsReducer'
 import styles from '../AboutSinger/AboutSingers.module.css'
 import Tags from '../AboutSinger/Tags/Tags'
-
+import star from '../../images/star.webp'
 
 
 let Track = () => {
@@ -20,18 +20,21 @@ let Track = () => {
 
     }
 
-    let image;
-    if (track.hasOwnProperty("name")) {
-        image = track.album.image.map(a => Object.values(a))[3][0];
-    }
 
-    if (track.hasOwnProperty("album")) {
+    let image;
+    
+    if (track != undefined && track.length != 0 && track.hasOwnProperty("name")) {
+
+        if (track.hasOwnProperty("album")) {
+            image = track.album.image.map(a => Object.values(a))[3][0];
+        }
+
         return (
             <div className={styles.main__items__container}>
                 <div className={styles.main__items}>
                     <div className={styles.main__image_block}>
                         <div>
-                            <img src={image} alt="artist-image" />
+                            <img src={!image === true  ? star : image} alt="artist-image" />
                         </div>
                         <div>
                             <h3 className={styles.main__item_header}>{track.artist.name} - {track.name}</h3>
@@ -39,13 +42,13 @@ let Track = () => {
                     </div>
                     <div className={styles.main__item}>
                         <p className={styles.main__text}>
-                            {track.wiki.summary}
+                            {track.wiki === undefined ? " " : track.wiki.summary}
                         </p>
                         <p className={styles.main__text}>
                             Duration {estimate(track.duration)}
                         </p>
                         <p className={styles.main__text}>
-                            {track.wiki.published}
+                            {track.wiki === undefined ? " " : track.wiki.published}
                         </p>
                     </div>
                 </div >

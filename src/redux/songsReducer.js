@@ -6,9 +6,11 @@ const SET_SONGS = 'SET_SONGS';
 const SET_AUTHOR = 'SET_AUTHOR';
 const SET_SONG = 'SET_SONG';
 const SET_TRACKS = 'SET_TRACKS';
+const SET_COUTRY_TRACKS = 'SET_COUNTRY_TRACKS';
 const SET_FAVORITE = 'SET_FAVORITE';
 const DELETE_FAVORITE = 'DELETE_FAVORITE';
 const SET_ALBUMS = 'SET_ALBUMS';
+const SET_TOKEN = 'SET_TOKEN';
 
 
 
@@ -19,7 +21,9 @@ let initialState = {
     tracks: [],
     favorite: [],
     albums: [],
-    history: []
+    history: [],
+    topTracks: [],
+    token: ""
 }
 
 const songsReducer = (state = initialState, action) => {
@@ -28,6 +32,11 @@ const songsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 songs: action.songs
+            }
+        case SET_COUTRY_TRACKS:
+            return {
+                ...state,
+                topTracks: action.topTracks,
             }
         case SET_AUTHOR:
             return {
@@ -50,15 +59,20 @@ const songsReducer = (state = initialState, action) => {
                 ...state,
                 favorite: [...state.favorite, action.favorite]
             }
-        case SET_ALBUMS: 
+        case SET_ALBUMS:
             return {
                 ...state,
                 albums: action.albums
-            }   
+            }
         case DELETE_FAVORITE:
             return {
                 ...state,
                 favorite: state.favorite.filter(item => item.artist !== action.song && item.song !== action.artist)
+            }
+        case SET_TOKEN:
+            return {
+                ...state,
+                token: action.token
             }
         default:
             return state
@@ -69,15 +83,18 @@ export const setSongs = (songs) => ({ type: SET_SONGS, songs });
 export const setArtist = (artist) => ({ type: SET_AUTHOR, artist });
 export const setTracks = (track, word) => ({ type: SET_TRACKS, track, word });
 export const setFavorite = (favorite) => ({ type: SET_FAVORITE, favorite });
-export const deleteFavorite = (song, artist) => ({ type: DELETE_FAVORITE, song, artist});
-export const setAlbums = (albums) => ({type: SET_ALBUMS, albums});
-export const setSong = (song) => ({type: SET_SONG, song});
+export const deleteFavorite = (song, artist) => ({ type: DELETE_FAVORITE, song, artist });
+export const setAlbums = (albums) => ({ type: SET_ALBUMS, albums });
+export const setSong = (song) => ({ type: SET_SONG, song });
+export const setCountryTracks = (topTracks) => ({ type: SET_COUTRY_TRACKS, topTracks });
+export const setToken = (token) => ({ type: SET_TOKEN, token });
+
 
 
 export const requestSongs = (number) => {
     return async (dispatch) => {
         let response = await songsAPI.getSongs(number)
-        dispatch(setSongs(response)) 
+        dispatch(setSongs(response))
     }
 }
 
@@ -109,8 +126,22 @@ export const getAlbums = (artist) => {
     }
 }
 
+export const getTopCountryTracks = (country) => {
+    return async (dispatch) => {
+        try {
+            let response = await songsAPI.getTopCountryTracks(country)
+            dispatch(setCountryTracks(response))
+        }
+        catch (error) {
+            dispatch(setCountryTracks([]))
+        }
+    }
+}
+
+
+
+
 
 export default songsReducer;
 
 
-//let call = songsAPI.getArtistData("Starset")

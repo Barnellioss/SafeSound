@@ -37,7 +37,7 @@ let SongItem = ({ artist, name, url }) => {
                 <NavLink onClick={() => dispatch(requestSong(artist,name))} to="/track">{name.toString()}</NavLink>
             </h3>
             <div className={styles.url}>
-                <a className={styles.href} href={url}>Author's Page</a>
+                <a className={styles.href} href={url} target="_blank">Author's Page</a>
                 <div className={styles.buttons}>
                     {inFavorite
                        ?

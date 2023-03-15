@@ -5,13 +5,13 @@ import { nanoid } from 'nanoid'
 
 
 
-let SearchPages = ({tracks, formValue}) => {
+let SearchPages = ({tracks, country}) => {
     
     
-    let songItems = tracks.map(data => <SongItem artist = {data.artist} key={nanoid()} name = {data.name}  url = {data.url} />)
+    let songItems = tracks.map(data => <SongItem artist = {!country ? data.artist : data.artist.name} key={nanoid()} name = {data.name}  url = {data.url}/>)
        return ( 
            <div className="">
-               <SearchPage/>
+               <SearchPage country={country}/>
                {songItems}
            </div>
        )

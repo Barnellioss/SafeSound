@@ -26,7 +26,7 @@ let FavoritePage = () => {
             <NavLink onClick={() => dispatch(requestSong(item.artist, item.song))} to="/track">{item.song.toString()}</NavLink>
           </h3>
           <div className={styles.url}>
-            <a className={styles.href} href={item.url}>Author's Page</a>
+            <a className={styles.href} href={item.url} target="_blank">Author's Page</a>
             <div className={styles.buttons}>
               <CloseCircleTwoTone onClick={() => dispatch(deleteFavorite(item.artist, item.song))} twoToneColor="#eb2f96" style={{ paddingLeft: "8px", paddingTop: '4px', cursor: 'pointer' }} />
             </div>
